@@ -23,26 +23,10 @@ class Quick_Tools_Admin {
             return;
         }
 
-        // Enqueue Bootstrap 5 (CDN) - Scoped to our page only
-        wp_enqueue_style(
-            'bootstrap-5',
-            'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
-            array(),
-            '5.3.0'
-        );
-
-        // Custom overrides for Bootstrap/WP conflicts
-        wp_add_inline_style('bootstrap-5', '
-            .wrap.qt-bootstrap-wrapper { margin-top: 20px; }
-            .qt-bootstrap-wrapper a { text-decoration: none; }
-            /* Fix WP admin menu overlapping */
-            .qt-bootstrap-wrapper .card { max-width: 100%; }
-        ');
-
         wp_enqueue_style(
             $this->plugin_name,
             QUICK_TOOLS_PLUGIN_URL . 'admin/css/admin-style.css',
-            array('bootstrap-5'),
+            array(), // No dependencies
             $this->version,
             'all'
         );
@@ -54,17 +38,9 @@ class Quick_Tools_Admin {
         }
 
         wp_enqueue_script(
-            'bootstrap-js',
-            'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js',
-            array('jquery'),
-            '5.3.0',
-            true
-        );
-
-        wp_enqueue_script(
             $this->plugin_name,
             QUICK_TOOLS_PLUGIN_URL . 'admin/js/admin-script.js',
-            array('jquery', 'bootstrap-js'),
+            array('jquery'), // No Bootstrap JS needed
             $this->version,
             true
         );
@@ -128,7 +104,6 @@ class Quick_Tools_Admin {
             foreach ($menu as $item) {
                 if (!empty($item[0]) && !empty($item[2])) {
                     $slug = $item[2];
-                    // If it's not a standard WP page and not a separator
                     if (!in_array($slug, $excludes) && strpos($item[4], 'wp-menu-separator') === false) {
                         $options_pages[$slug] = strip_tags($item[0]);
                     }
@@ -136,12 +111,11 @@ class Quick_Tools_Admin {
             }
         }
 
-        // Check submenus (often where Options pages live)
+        // Check submenus
         if (!empty($submenu)) {
             foreach ($submenu as $parent => $items) {
                 foreach ($items as $item) {
                     if (!empty($item[2]) && !in_array($item[2], $excludes)) {
-                        // Create a readable name: "Parent > Child"
                         $parent_name = isset($menu) ? self::find_parent_name($parent, $menu) : $parent;
                         $page_name = strip_tags($item[0]);
                         $options_pages[$item[2]] = $parent_name . ' > ' . $page_name;
@@ -160,7 +134,7 @@ class Quick_Tools_Admin {
         return $slug;
     }
 
-    // AJAX handlers remain the same...
+    // AJAX handlers
     public function ajax_search_documentation(): void {
         check_ajax_referer('quick_tools_nonce', 'nonce');
         $search_term = sanitize_text_field($_POST['search_term']);
