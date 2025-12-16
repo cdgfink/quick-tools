@@ -118,6 +118,7 @@ class Quick_Tools {
 
         // CPT Dashboard hooks
         $this->loader->add_action('wp_dashboard_setup', $cpt_dashboard, 'add_dashboard_widgets');
+        $this->loader->add_action('all_admin_notices', $cpt_dashboard, 'inject_options_page_buttons');
     }
 
     /**
