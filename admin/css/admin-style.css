@@ -510,8 +510,8 @@
 .qt-doc-grid-item {
     display: flex;
     min-width: 0;
-    max-width:100%;
-    overflow:hidden
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .qt-doc-button {
@@ -531,6 +531,7 @@
     white-space: normal;
     line-height: 1.4;
     hyphens: auto;
+}
 
 .qt-doc-button .qt-doc-status {
     margin-left: 8px;
