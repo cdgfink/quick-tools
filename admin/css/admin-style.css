@@ -1,0 +1,987 @@
+/* Quick Tools Admin Styles */
+
+/* Main Admin Layout */
+.qt-admin-page {
+    margin: 20px 20px 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+}
+
+.qt-admin-header {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+}
+
+.qt-description {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0 0 0;
+}
+
+/* Tab Navigation */
+.qt-nav-tabs {
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+}
+
+.qt-nav-tabs .nav-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qt-nav-tabs .nav-tab .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Tab Content */
+.qt-tab-content {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.qt-tab-panel {
+    display: block;
+}
+
+/* Module Style Options */
+.qt-module-style-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.qt-module-style-option {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+    border: 2px solid #e1e4e7;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.qt-module-style-option:hover {
+    border-color: #2271b1;
+    background: #f8f9fa;
+}
+
+.qt-module-style-option input[type="radio"] {
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+.qt-module-style-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.qt-module-style-label strong {
+    font-size: 14px;
+    color: #1d2327;
+}
+
+.qt-module-style-description {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Settings Sections */
+.qt-settings-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.qt-settings-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.qt-settings-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #23282d;
+}
+
+/* Categories Overview */
+.qt-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.qt-category-card {
+    background: #f8f9fa;
+    border: 1px solid #e1e4e7;
+    border-radius: 6px;
+    padding: 20px;
+    transition: box-shadow 0.2s ease;
+}
+
+.qt-category-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qt-category-card h4 {
+    margin: 0 0 8px 0;
+    color: #1d2327;
+}
+
+.qt-category-count {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2271b1;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.qt-category-description {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.qt-category-actions {
+    margin-top: 15px;
+}
+
+/* CPT Selection Grid */
+.qt-cpt-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.qt-cpt-option {
+    position: relative;
+}
+
+.qt-cpt-card {
+    display: block;
+    background: #fff;
+    border: 2px solid #e1e4e7;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.qt-cpt-card:hover {
+    border-color: #2271b1;
+    box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1);
+}
+
+.qt-cpt-card.selected {
+    border-color: #2271b1;
+    background: #f0f6fc;
+}
+
+.qt-cpt-card input[type="checkbox"] {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.qt-cpt-card-header h4 {
+    margin: 0 0 5px 0;
+    color: #1d2327;
+}
+
+.qt-cpt-slug {
+    font-size: 12px;
+    color: #666;
+    font-family: monospace;
+    background: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.qt-cpt-card-stats {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.qt-stat {
+    text-align: center;
+}
+
+.qt-stat-number {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2271b1;
+    line-height: 1;
+}
+
+.qt-stat-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.qt-cpt-card-description {
+    margin: 15px 0;
+    color: #666;
+    font-size: 13px;
+}
+
+.qt-cpt-card-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+/* No CPTs Message */
+.qt-no-cpts {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    border: 1px solid #e1e4e7;
+    border-radius: 6px;
+}
+
+/* Feature Lists */
+.qt-feature-list {
+    display: grid;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.qt-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.qt-feature-icon {
+    font-size: 24px;
+    color: #2271b1;
+    margin-top: 5px;
+}
+
+.qt-feature-content h4 {
+    margin: 0 0 8px 0;
+    color: #1d2327;
+}
+
+.qt-feature-content p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Sidebar */
+.qt-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.qt-sidebar-box {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.qt-sidebar-box h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #1d2327;
+}
+
+.qt-stats-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.qt-stats-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.qt-stats-list li:last-child {
+    border-bottom: none;
+}
+
+.qt-stats-list strong {
+    color: #2271b1;
+    font-size: 18px;
+}
+
+/* Import/Export Styles */
+.qt-export-options {
+    display: grid;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.qt-export-option {
+    background: #f8f9fa;
+    border: 1px solid #e1e4e7;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.qt-export-option h4,
+.qt-export-option h5 {
+    margin: 0 0 10px 0;
+    color: #1d2327;
+}
+
+.qt-category-exports {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.qt-category-export {
+    padding: 15px;
+}
+
+.qt-import-form {
+    background: #f8f9fa;
+    border: 1px solid #e1e4e7;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.qt-import-upload {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.qt-selected-file {
+    margin-top: 15px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.qt-import-preview {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.qt-import-details {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.qt-import-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.qt-import-notice {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.qt-import-notice h4 {
+    margin: 0 0 10px 0;
+    color: #856404;
+}
+
+.qt-import-notice ul {
+    margin: 0;
+    color: #856404;
+}
+
+/* Overview Stats */
+.qt-overview-stats {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.qt-overview-stat {
+    text-align: center;
+    min-width: 120px;
+}
+
+.qt-overview-stat .qt-stat-number {
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    color: #2271b1;
+    line-height: 1;
+}
+
+.qt-overview-stat .qt-stat-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+    display: block;
+}
+
+.qt-category-breakdown {
+    margin: 20px 0;
+}
+
+.qt-category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.qt-category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Documentation Dashboard Widget Styles */
+.qt-documentation-widget {
+    margin: -12px;
+}
+
+/* Minimal Widget Style */
+.qt-minimal-widget .qt-minimal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+}
+
+.qt-minimal-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px !important;
+    font-size: 14px !important;
+}
+
+.qt-minimal-button .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+/* Informative Widget Style - Updated Grid Layout */
+.qt-informative-widget .qt-doc-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px;
+}
+
+.qt-doc-grid-item {
+    display: flex;
+    min-width: 0; /* Important for text overflow handling */
+}
+
+.qt-doc-button {
+    width: 100%;
+    text-align: left !important;
+    padding: 10px 12px !important;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    word-wrap: break-word;
+    word-break: break-word; /* Added for better word breaking */
+    white-space: normal;
+    line-height: 1.4;
+    hyphens: auto; /* Allow hyphenation for very long words */
+}
+
+.qt-doc-button .qt-doc-status {
+    margin-left: 8px;
+    flex-shrink: 0;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Status color coding */
+.qt-status-publish {
+    background: #d4edda;
+    color: #155724;
+}
+
+.qt-status-draft {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.qt-status-pending {
+    background: #cce7ff;
+    color: #004085;
+}
+
+/* Widget footer remains the same */
+.qt-widget-footer {
+    padding: 12px;
+    border-top: 1px solid #f1f1f1;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* Single column on smaller screens */
+@media screen and (max-width: 1400px) {
+    .qt-informative-widget .qt-doc-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Documentation Category Archive Page */
+.qt-documentation-category {
+    max-width: 1200px;
+}
+
+.qt-documentation-category h1 {
+    margin-bottom: 15px;
+}
+
+.qt-documentation-category .description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.qt-no-docs {
+    background: #f8f9fa;
+    border: 1px solid #e1e4e7;
+    border-radius: 6px;
+    padding: 40px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.qt-doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.qt-doc-card {
+    background: #fff!important;
+    border: 1px solid #e1e4e7!important;
+    border-radius: 6px!important;
+    padding: 20px!important;
+    transition: box-shadow 0.2s ease;
+}
+
+.qt-doc-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qt-doc-card h3 {
+    margin: 0 0 12px 0;
+}
+
+.qt-doc-card h3 a {
+    text-decoration: none;
+    color: #1d2327;
+}
+
+.qt-doc-card h3 a:hover {
+    color: #2271b1;
+}
+
+.qt-doc-card .qt-doc-excerpt {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.qt-doc-card .qt-doc-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: #999;
+}
+
+.qt-doc-card .qt-doc-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.qt-category-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e1e4e7;
+    display: flex;
+    gap: 10px;
+}
+
+/* CPT Dashboard Widget Styles */
+.qt-cpt-widget {
+    margin: -12px;
+}
+
+/* Minimal CPT Widget Style */
+.qt-cpt-widget.qt-minimal-widget .qt-minimal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+}
+
+/* Informative CPT Widget Style */
+.qt-cpt-widget.qt-informative-widget .qt-cpt-main-action {
+    text-align: center;
+    padding: 20px 12px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.qt-cpt-main-action .button-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qt-cpt-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 12px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.qt-stat-item {
+    text-align: center;
+}
+
+.qt-recent-posts {
+    padding: 12px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.qt-recent-posts h4 {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.qt-recent-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.qt-recent-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 12px;
+}
+
+.qt-recent-title {
+    flex: 1;
+    text-decoration: none;
+    color: #2271b1;
+    font-weight: 500;
+}
+
+.qt-recent-status {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.qt-recent-date {
+    color: #666;
+    white-space: nowrap;
+}
+
+.qt-cpt-actions {
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* Modal Styles */
+.qt-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qt-modal-content {
+    background: #fff;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.qt-modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qt-modal-header h2 {
+    margin: 0;
+}
+
+.qt-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qt-modal-close:hover {
+    background: #f0f0f0;
+}
+
+.qt-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Search Styles */
+.qt-search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.qt-search-form input {
+    flex: 1;
+}
+
+#qt-search-results {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.qt-search-result {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.qt-search-result h4 {
+    margin: 0 0 8px 0;
+}
+
+.qt-search-result h4 a {
+    text-decoration: none;
+    color: #2271b1;
+}
+
+.qt-search-categories {
+    margin: 8px 0;
+}
+
+.qt-search-category {
+    display: inline-block;
+    background: #f1f1f1;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    margin-right: 5px;
+}
+
+/* Progress Styles */
+.qt-progress-content {
+    min-width: 400px;
+}
+
+.qt-progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.qt-progress-fill {
+    height: 100%;
+    background: #2271b1;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Documentation Viewer */
+.qt-documentation-viewer {
+    max-width: 800px;
+}
+
+.qt-doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.qt-doc-meta {
+    text-align: right;
+}
+
+.qt-doc-date {
+    display: block;
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.qt-doc-content {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.qt-doc-footer {
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .qt-admin-page {
+        grid-template-columns: 1fr;
+    }
+    
+    .qt-sidebar {
+        order: -1;
+    }
+    
+    .qt-categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .qt-cpt-selection-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .qt-admin-page {
+        margin: 10px;
+    }
+    
+    .qt-tab-content {
+        padding: 15px;
+    }
+    
+    .qt-overview-stats {
+        justify-content: center;
+    }
+    
+    .qt-cpt-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .qt-modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .qt-minimal-buttons {
+        gap: 8px !important;
+    }
+
+    .qt-minimal-button {
+        font-size: 13px !important;
+        padding: 8px 12px !important;
+    }
+}
+
+/* Loading States */
+.qt-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.qt-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-top-color: #2271b1;
+    border-radius: 50%;
+    animation: qt-spin 0.8s linear infinite;
+}
+
+@keyframes qt-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.qt-text-center { text-align: center; }
+.qt-text-right { text-align: right; }
+.qt-mb-0 { margin-bottom: 0; }
+.qt-mt-20 { margin-top: 20px; }
+.qt-hidden { display: none; }
